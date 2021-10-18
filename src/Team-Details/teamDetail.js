@@ -17,7 +17,7 @@ const TeamDetail = () => {
   const [teamName, setTeamName] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/team/${teamdata}/${teamId}`)
+    fetch(process.env.REACT_APP_BACKEND_URL + `team/${teamdata}/${teamId}`)
       .then((res) => {
         return res.json();
       })
@@ -28,7 +28,7 @@ const TeamDetail = () => {
         setTeamName(result.team);
         setData(true);
       });
-    fetch("http://localhost:5000/")
+    fetch(process.env.REACT_APP_BACKEND_URL)
       .then((data) => data.json())
       .then((result) => {
         setTeams(result.data);

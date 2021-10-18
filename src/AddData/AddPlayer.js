@@ -47,7 +47,7 @@ const AddPlayer = () => {
 
     console.log(newData);
 
-    fetch("http://localhost:5000/add-player", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "add-player", {
       method: "POST",
       body: JSON.stringify(newData),
       headers: {

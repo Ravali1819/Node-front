@@ -8,7 +8,7 @@ const PlayerDetails = () => {
   const [player, setPlayer] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/playerName/${playerdata}`)
+    fetch(process.env.REACT_APP_BACKEND_URL + `playerName/${playerdata}`)
       .then((res) => {
         return res.json();
       })

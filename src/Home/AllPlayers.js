@@ -8,7 +8,7 @@ const AllPlayers = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/")
+    fetch(process.env.REACT_APP_BACKEND_URL)
       .then((data) => data.json())
       .then((result) => {
         setAllTeams(result.data);
